@@ -1,0 +1,26 @@
+$primary: #7600d1;
+$primary-light: #6E3F93;
+$primary-dark: #331A42;
+$primary-gradient: linear-gradient(160deg, $primary-light -5%, $primary-dark 100%);
+$pure-black: #000;
+$black: #111;
+$white: #fff;
+$gray: #808080;
+$gray-light: #BBB;
+$gray-dark: #333;
+$error: hsl(0, 70%, 50%);
+$success: hsl(120, 52%, 55%);
+
+$app-dark-block: hsl(0, 0%, 7%);
+$app-dark-gray: hsl(0, 0%, 40%);
+$app-dark-background: hsl(0, 0%, 10%);
+$app-dark-card: hsl(0, 0%, 15%);
+$app-dark-success: hsl(120, 52%, 40%);
+$app-dark-error: hsl(0, 70%, 40%);
+
+$app-light-block: hsl(0, 0%, 12%);
+$app-light-gray: hsl(0, 0%, 60%);
+$app-light-background: hsl(0, 0%, 100%);
+$app-light-card: hsl(0, 0%, 90%);
+$app-light-success: hsl(120, 52%, 55%);
+$app-light-error: hsl(0, 70%, 50%);

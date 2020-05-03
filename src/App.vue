@@ -1,32 +1,72 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="app" :class="mode === 'dark' ? 'dark' : 'light'">
+        <div v-if="loggedIn">
+            <app-nav :mode="mode" @toggle="toggle" />
+        </div>
+        <router-view class="page" />
     </div>
-    <router-view />
-  </div>
 </template>
 
+<script>
+import { authComputed } from './store/helpers'
+import AppNav from './components/AppNav'
+export default {
+    components: { AppNav },
+    data() {
+        return {
+            mode: 'light'
+        }
+    },
+    methods: {
+        toggle() {
+            if (this.mode === 'dark') {
+                this.mode = 'light'
+            } else {
+                this.mode = 'dark'
+            }
+        }
+    },
+    computed: {
+        ...authComputed
+    }
+}
+</script>
+
 <style lang="scss">
+@import './assets/styles/global.scss';
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+    background-color: var(--bg-color);
 }
 
-#nav {
-  padding: 30px;
+.page {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: calc(100vh - 60px);
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+.fade {
+    &-enter-active,
+    &-leave-active {
+        transition: opacity 0.5s;
     }
-  }
+
+    &-enter,
+    &-leave-to {
+        opacity: 0;
+    }
+}
+
+.fade-up {
+    &-enter-active,
+    &-leave-active {
+        transition: opacity 1s;
+    }
+
+    &-enter,
+    &-leave-to {
+        opacity: 0;
+    }
 }
 </style>
