@@ -1,20 +1,14 @@
 # To-do List
 
-<br/>
-
 ## :page_facing_up: About
 
 Simple to-do list project.
 
 Back end built by [marcelosdias]
 
-<br/>
-
 ## :construction: Comming soon
 
 New features and improvements are coming soon.
-
-<br/>
 
 ## :wrench: Project setup
 
