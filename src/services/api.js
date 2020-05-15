@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const API = axios.create({
-    baseURL: `https://upload-to-do-list.herokuapp.com`,
+    baseURL: `https://upload-to-do-list-v2.herokuapp.com`,
     withCredentials: false, // This is the default
     headers: {
         Accept: 'application/json',

@@ -53,7 +53,7 @@ export default new Vuex.Store({
         },
         todos({ commit }) {
             return api.getTodos().then(({ data }) => {
-                commit('SET_TODOS', data.user.posts)
+                commit('SET_TODOS', data.posts)
             })
         },
         newTodo({ commit }, todoData) {
